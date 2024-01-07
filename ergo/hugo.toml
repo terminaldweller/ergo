@@ -2,7 +2,7 @@ baseURL = 'https://portfolio.terminaldweller.com/'
 languageCode = 'en-us'
 title = 'Portfolio'
 theme = 'm10c'
-paginate = 8
+# paginate = 8
   
 
 [menu]
@@ -12,10 +12,10 @@ paginate = 8
     url = "/"
     weight = 1
   [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 2
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 1
   [[menu.main]]
     identifier = "about"
     name = "About"
@@ -25,7 +25,7 @@ paginate = 8
 [params]
   author = "Farzad Sadeghi"
   description = "Linux generalist, FOSS enthusiast, self-hoster"
-  menu_item_separator = " / "
+  menu_item_separator = " | "
   [[params.contact]]
     email = "devi@terminaldweller.com"
   [[params.social]]
@@ -43,7 +43,8 @@ paginate = 8
 
   [params.style]
     darkestColor = "#005f87"
-    darkColor = "#253031"
+    # darkColor = "#253031"
+    darkColor = "#005f5f"
     lightColor = "#000000"
     lightestColor = "#fff"
     primaryColor = "#ffffff"
