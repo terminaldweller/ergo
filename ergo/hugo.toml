@@ -1,0 +1,49 @@
+baseURL = 'https://portfolio.terminaldweller.com/'
+languageCode = 'en-us'
+title = 'Portfolio'
+theme = 'm10c'
+paginate = 8
+  
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+[params]
+  author = "Farzad Sadeghi"
+  description = "Linux generalist, FOSS enthusiast, self-hoster"
+  menu_item_separator = " / "
+  [[params.contact]]
+    email = "devi@terminaldweller.com"
+  [[params.social]]
+    icon = "ropes"
+    name = "List of Links"
+    url = "https://terminaldweller.com"
+  [[params.social]]
+    icon = "github"
+    name = "Github"
+    url = "https://github.com/terminaldweller"
+  [[params.social]]
+    icon = "linkedin"
+    name = "Linkedin"
+    url = "https://www.linkedin.com/in/farzad-sadeghi"
+
+  [params.style]
+    darkestColor = "#005f87"
+    darkColor = "#253031"
+    lightColor = "#000000"
+    lightestColor = "#fff"
+    primaryColor = "#ffffff"
