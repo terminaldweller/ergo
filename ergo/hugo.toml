@@ -9,13 +9,13 @@ theme = 'm10c'
   [[menu.main]]
     identifier = "home"
     name = "Home"
-    url = "/"
+    url = "/landing/"
     weight = 1
   [[menu.main]]
     identifier = "projects"
     name = "Projects"
     url = "/projects/"
-    weight = 1
+    weight = 2
   [[menu.main]]
     identifier = "about"
     name = "About"
@@ -42,9 +42,8 @@ theme = 'm10c'
     url = "https://www.linkedin.com/in/farzad-sadeghi"
 
   [params.style]
-    darkestColor = "#005f87"
-    # darkColor = "#253031"
-    darkColor = "#005f5f"
-    lightColor = "#000000"
-    lightestColor = "#fff"
-    primaryColor = "#ffffff"
+    darkestColor = "#000000"
+    darkColor = "#000000"
+    lightColor = "#5f5f5f"
+    lightestColor = "#00af87"
+    primaryColor = "#005f5f"
