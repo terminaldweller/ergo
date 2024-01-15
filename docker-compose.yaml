@@ -15,10 +15,35 @@ services:
     networks:
       - hugonet
     ports:
-      - "0.0.0.0:3113:1313"
+      - "127.0.0.1:3114:1313"
     restart: unless-stopped
     entrypoint: ["/docker-entrypoint.sh"]
     volumes:
+  nginx:
+    image: nginx:stable
+    deploy:
+      resources:
+        limits:
+          memory: 384M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+    ports:
+      - "3113:443"
+    networks:
+      - rssbridgenet
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETGID
+      - SETUID
+      - NET_BIND_SERVICE
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - /etc/letsencrypt/live/portfolio.terminaldweller.com/privkey.pem:/etc/letsencrypt/live/portfolio.terminaldweller.com/privkey.pem:ro
       - /etc/letsencrypt/live/portfolio.terminaldweller.com/fullchain.pem:/etc/letsencrypt/live/portfolio.terminaldweller.com/fullchain.pem:ro
 networks:
