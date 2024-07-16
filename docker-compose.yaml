@@ -1,23 +1,4 @@
-version: "3.8"
 services:
-  hugo:
-    image: hugo_ergo
-    build:
-      context: .
-    deploy:
-      resources:
-        limits:
-          memory: 384M
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "100m"
-    networks:
-      - hugonet
-    ports:
-      - "127.0.0.1:3114:1313"
-    restart: unless-stopped
-    entrypoint: ["/docker-entrypoint.sh"]
   nginx:
     image: nginx:stable
     deploy:
@@ -45,5 +26,6 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - /etc/letsencrypt/live/portfolio.terminaldweller.com/privkey.pem:/etc/letsencrypt/live/portfolio.terminaldweller.com/privkey.pem:ro
       - /etc/letsencrypt/live/portfolio.terminaldweller.com/fullchain.pem:/etc/letsencrypt/live/portfolio.terminaldweller.com/fullchain.pem:ro
+      - ./srv:/usr/share/nginx/html:ro
 networks:
   hugonet:
