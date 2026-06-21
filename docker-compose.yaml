@@ -14,6 +14,12 @@ services:
     networks:
       - hugonet
     restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx:rw,noexec,nosuid,size=64m
+      - /run:rw,noexec,nosuid,size=16m
     cap_drop:
       - ALL
     cap_add:
@@ -29,3 +35,4 @@ services:
       - ./srv:/usr/share/nginx/html:ro
 networks:
   hugonet:
+    enable_ipv6: true
